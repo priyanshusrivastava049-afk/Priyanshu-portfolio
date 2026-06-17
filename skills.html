@@ -101,5 +101,59 @@
                     Proficient in optimizing algorithms, debugging code, and developing efficient solutions. Solved a range of DSA questions, enhancing logical reasoning and coding efficiency.
         </div>
     </div>
+<!--
+  CHATBOT-WIDGET-SNIPPET.html
+  ----------------------------------------------------------------------------
+  This is the exact HTML markup to insert into EVERY page of the portfolio
+  (home.html, about.html, skills.html, contact.html) — right before the
+  closing </body> tag.
+
+  It does not affect any existing layout because it is a fixed-position
+  floating widget (see chatbot.css, #pcb-root { position: fixed; }).
+-->
+
+<!-- ============ PORTFOLIO CHATBOT WIDGET START ============ -->
+<div id="pcb-root">
+
+  <!-- Floating toggle button (bottom-right) -->
+  <button id="pcb-toggle-btn" aria-label="Open chat assistant" aria-expanded="false">
+    <i class="fa-solid fa-comment-dots pcb-icon-chat"></i>
+    <i class="fa-solid fa-xmark pcb-icon-close"></i>
+  </button>
+
+  <!-- Chat window -->
+  <div id="pcb-window" role="dialog" aria-label="Portfolio chat assistant">
+    <div id="pcb-header">
+      <div id="pcb-header-info">
+        <div id="pcb-header-avatar">PS</div>
+        <div id="pcb-header-text">
+          <strong>Priyanshu's Assistant</strong>
+          <span>Online</span>
+        </div>
+      </div>
+      <button id="pcb-close-btn" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div id="pcb-messages"></div>
+
+    <div id="pcb-suggestions"></div>
+
+    <form id="pcb-input-form" autocomplete="off">
+      <input type="text" id="pcb-input" placeholder="Ask me anything..." aria-label="Type your message" />
+      <button type="submit" id="pcb-send-btn" aria-label="Send message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+</div>
+
+<!-- Chatbot scripts: data (knowledge base) -> engine (NLU/logic) -> UI controller -->
+<link rel="stylesheet" href="chatbot.css">
+<script src="chatbot-data.js"></script>
+<script src="chatbot.js"></script>
+<script src="chatbot-ui.js"></script>
+<!-- ============ PORTFOLIO CHATBOT WIDGET END ============ -->
+
 </body>
 </html>
