@@ -1,0 +1,156 @@
+/* ============================================================================
+   RESPONSIVE-FIX.CSS
+   ----------------------------------------------------------------------------
+   Drop-in mobile-responsiveness patch for Priyanshu's portfolio.
+
+   HOW TO USE:
+   Add ONE line to the <head> of home.html, about.html, skills.html and
+   contact.html (anywhere after the existing <style> block is fine, e.g.
+   right after the Font Awesome <link>):
+
+       <link rel="stylesheet" href="responsive-fix.css">
+
+   This file does not touch or remove any of your existing CSS — it only
+   overrides the specific rules that were breaking the layout on phones
+   and tablets.
+   ============================================================================ */
+
+/* 1) THE BIGGEST CULPRIT: no box-sizing reset meant padding on elements
+      like .intromsg was added ON TOP of their 100% width, pushing content
+      past the edge of the screen and causing horizontal scrolling on
+      mobile. This fixes that site-wide. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2) Navbar had 6 grid columns declared for only 5 real items (logo, Home,
+      About, Skill, Contact), leaving a dead empty column. Matching the
+      column count to the real item count keeps the nav balanced and also
+      makes it easier to shrink on small screens. */
+#navbar {
+  grid-template-columns: repeat(5, 1fr) !important;
+  align-items: center;
+  row-gap: 6px;
+}
+
+#navbar .icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px 2px;
+  min-width: 0; /* lets text shrink instead of breaking the grid track */
+}
+
+#navbar .icon img {
+  width: 100%;
+  max-width: 44px;
+  height: 44px;
+  object-fit: cover;
+}
+
+/* 3) Make sure no image can ever exceed its container's width */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4) Home page hero (#intro): the 150px gap was never reduced when the
+      layout dropped to a single column on tablets/phones, leaving a huge
+      empty space between the intro text and the photo. */
+@media (max-width: 1024px) {
+  #intro {
+    gap: 24px !important;
+    padding: 0 20px;
+  }
+  .intromsg {
+    padding: 20px !important;
+  }
+  .image {
+    margin: 0 auto;
+    padding: 10px !important;
+  }
+}
+
+/* 5) Phones (≤480px): the desktop font sizes (xx-large, 40px, etc.) were
+      never scaled down, causing heavy text wrapping and a cramped navbar.
+      This tightens fonts + spacing for small screens. */
+@media (max-width: 480px) {
+  #navbar {
+    font-size: 11px;
+  }
+  #navbar .icon img {
+    max-width: 32px;
+    height: 32px;
+  }
+
+  p {
+    font-size: 24px !important;
+    margin: 24px auto !important;
+  }
+
+  #work {
+    font-size: 26px !important;
+  }
+
+  #descp {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    margin: 20px auto !important;
+  }
+
+  #descp span {
+    font-size: 18px !important;
+  }
+
+  #info {
+    font-size: 15px !important;
+    gap: 8px;
+  }
+
+  .intromsg {
+    font-size: 14px !important;
+    padding: 16px !important;
+  }
+
+  .intromsg span {
+    font-size: 17px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  #contact {
+    font-size: 15px !important;
+    gap: 24px;
+  }
+
+  #skill {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    gap: 20px !important;
+  }
+
+  .FE span,
+  .DSA span {
+    font-size: 20px !important;
+  }
+}
+
+/* 6) Very small phones (≤360px): shrink the nav just a little more so
+      "About" / "Contact" never wrap onto two lines */
+@media (max-width: 360px) {
+  #navbar {
+    font-size: 9px;
+  }
+  #navbar .icon img {
+    max-width: 26px;
+    height: 26px;
+  }
+}
