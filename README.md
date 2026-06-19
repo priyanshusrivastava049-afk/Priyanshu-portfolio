@@ -46,7 +46,7 @@ LinkedIn
 https://www.linkedin.com/in/priyanshu-srivastav-313989345/
 
 **Website Preview**
-![Home page](image-3.png)
-![About page](image.png) 
-![Skills page](image-1.png)
-![Contact page](image-2.png)
+![Home page](image.png)
+![About page](image-1.png) 
+![Skills page](image-2.png)
+![Contact page](image-3.png)
