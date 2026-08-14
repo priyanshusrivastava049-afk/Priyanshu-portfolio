@@ -1,17 +1,4 @@
-/* ============================================================================
-   CHATBOT-UI.JS
-   ----------------------------------------------------------------------------
-   Handles all DOM interaction for the chatbot widget:
-     - Toggling open/close with animation
-     - Rendering user & bot messages
-     - Typing indicator simulation
-     - Auto-scroll to latest message
-     - Quick suggestion chips
-     - Session-only chat history (resets on page reload, per requirements)
 
-   This file assumes chatbot-data.js and chatbot.js are loaded BEFORE it,
-   since it relies on window.PortfolioChatbot.getBotResponse().
-   ============================================================================ */
 
 (function () {
   "use strict";

@@ -1,16 +1,4 @@
-/* ============================================================================
-   CHATBOT.CSS
-   ----------------------------------------------------------------------------
-   Styling for the floating portfolio chatbot widget.
-   Color palette matches the existing site (home.html / about.html / skills.html
-   / contact.html):
-     - Background dark navy : #0B1120
-     - Panel / navbar dark   : #111827
-     - Accent cyan           : #22D3EE
-     - Text                  : #E5E7EB / white
-   All class names are prefixed "pcb-" (Portfolio ChatBot) to avoid clashing
-   with any existing site styles.
-   ============================================================================ */
+
 
 #pcb-root {
   position: fixed;

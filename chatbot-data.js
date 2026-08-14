@@ -1,33 +1,4 @@
-/* ============================================================================
-   CHATBOT-DATA.JS
-   ----------------------------------------------------------------------------
-   This file is the KNOWLEDGE BASE for the portfolio chatbot.
 
-   WHERE THIS DATA CAME FROM (knowledge extraction):
-   Every field below was extracted directly from the existing portfolio files:
-     - home.html      -> name, tagline, intro/about-me summary, CV link
-     - about.html     -> bio, birthday, degree, city, age, phone, email,
-                         GitHub link, LeetCode link
-     - skills.html    -> skill categories + descriptions
-     - contact.html   -> phone, email, LinkedIn
-     - README.md      -> live demo URL, tech stack, GitHub repo, project
-                         description
-     - RESUME.docx    -> education (college name, years, coursework),
-                         technical skills, projects list, achievements,
-                         additional activities
-
-   HOW TO UPDATE THIS FILE (so new info is picked up automatically):
-     1. To add a NEW PROJECT          -> add an object to the PROJECTS array.
-     2. To add a NEW SKILL             -> add an object to the SKILLS array.
-     3. To add a NEW ACHIEVEMENT       -> add a string to ACHIEVEMENTS array.
-     4. To add a NEW ACTIVITY          -> add a string to ACTIVITIES array.
-     5. To update CONTACT/SOCIAL info  -> edit the CONTACT object.
-     6. To update EDUCATION            -> edit the EDUCATION array.
-     7. To update the ABOUT summary    -> edit the ABOUT object.
-
-   No other file needs to change when you update data here — the chatbot
-   engine (chatbot.js) reads everything dynamically from this object.
-   ============================================================================ */
 
 const PORTFOLIO_DATA = {
 
@@ -90,12 +61,6 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  // ---------------------------------------------------------------------
-  // PROJECTS  (sourced from RESUME.docx + README.md)
-  // To add a new project later, just push a new object into this array —
-  // the chatbot will automatically include it when answering "projects"
-  // questions.
-  // ---------------------------------------------------------------------
   projects: [
     {
       title: "Personal Portfolio Website",
@@ -113,17 +78,9 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  // ---------------------------------------------------------------------
-  // EXPERIENCE
-  // No formal work experience was found in the portfolio content. This is
-  // intentionally left as an empty array with a friendly fallback message
-  // used by the chatbot engine. Update here once internships/jobs happen.
-  // ---------------------------------------------------------------------
+
   experience: [],
 
-  // ---------------------------------------------------------------------
-  // ACHIEVEMENTS  (sourced from RESUME.docx "Coding Profiles & Achievements")
-  // ---------------------------------------------------------------------
   achievements: [
     "Solved 200+ problems on LeetCode",
     "Maximum coding streak of 100+ days",
@@ -138,18 +95,8 @@ const PORTFOLIO_DATA = {
     "Exploring web development and building small projects",
     "Interested in competitive programming and problem solving"
   ],
-
-  // ---------------------------------------------------------------------
-  // HACKATHONS
-  // None found in the current portfolio/resume content. Left as an empty
-  // array — chatbot will respond gracefully. Add entries like:
-  // { name: "...", result: "...", year: "..." }
-  // ---------------------------------------------------------------------
   hackathons: [],
 
-  // ---------------------------------------------------------------------
-  // CONTACT INFORMATION  (sourced from contact.html / about.html)
-  // ---------------------------------------------------------------------
   contact: {
     phone: "+91 7390868642",
     email: "priyanshusrivastav047@gmail.com",
@@ -166,10 +113,6 @@ const PORTFOLIO_DATA = {
     livePortfolio: "https://priyanshu-portfolio-roan-sigma.vercel.app/"
   },
 
-  // ---------------------------------------------------------------------
-  // AVAILABILITY  (not explicitly stated in portfolio; reasonable default
-  // based on "student actively building/learning" framing. Edit freely.)
-  // ---------------------------------------------------------------------
   availability: {
     openToInternships: true,
     message:
